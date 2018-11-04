@@ -1,3 +1,3 @@
 $fullPath = 'C:\Program Files\WindowsPowerShell\Modules\PSPulumi'
 
-Robocopy . $fullPath /mir /XD .vscode .git /XF .gitattributes .gitignore
+Robocopy . $fullPath /mir /XD .vscode .git images /XF .gitattributes .gitignore
