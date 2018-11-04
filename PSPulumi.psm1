@@ -1,0 +1,1 @@
+﻿. $PSScriptRoot\PulumiCompletion.ps1
