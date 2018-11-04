@@ -4,6 +4,6 @@ Pulumi provides a Cloud Native Development Platform to help teams achieve maximu
 
 # What's new 1.0.1
 
-A PowerShell argument completion for the Pulumi cli.
+PowerShell argument completion for the Pulumi cli.
 
 ![](./images/PulumiArgumentCompletion.gif)
