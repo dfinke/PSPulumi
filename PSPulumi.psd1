@@ -4,7 +4,7 @@
     RootModule        = 'PSPulumi.psm1'
 
     # Version number of this module.
-    ModuleVersion     = '1.0.1'
+    ModuleVersion     = '1.0.2'
 
     # ID used to uniquely identify this module
     GUID              = 'e4d5c1ca-d844-4fd2-8a0c-71ae54b9ddb4'
@@ -43,7 +43,13 @@
     # ProcessorArchitecture = ''
 
     # Modules that must be imported into the global environment prior to importing this module
-    # RequiredModules = @()
+    RequiredModules   = @(
+        @{
+            ModuleName    = "TabExpansionPlusPlus"
+            ModuleVersion = "1.2"
+            Guid          = "2e15ae89-6988-46fc-9996-d2c13257c6f7"
+        }
+    )
 
     # Assemblies that must be loaded prior to importing this module
     # RequiredAssemblies = @()
