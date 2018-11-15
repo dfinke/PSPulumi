@@ -4,7 +4,7 @@
     RootModule        = 'PSPulumi.psm1'
 
     # Version number of this module.
-    ModuleVersion     = '1.0.3'
+    ModuleVersion     = '1.0.4'
 
     # ID used to uniquely identify this module
     GUID              = 'e4d5c1ca-d844-4fd2-8a0c-71ae54b9ddb4'
@@ -20,8 +20,8 @@
 
     # Description of the functionality provided by this module
     Description       = @'
-    Generated     : 11/04/2018 09:22:31
-    Generated from: pulumi version v0.16.2
+    Generated     : 11/15/2018 16:25:29
+    Generated from: pulumi version v0.16.4
 '@
 
     # Minimum version of the Windows PowerShell engine required by this module
