@@ -1,6 +1,6 @@
 <#
-    Generated     : 12/09/2018 14:26:40
-    Generated from: pulumi version v0.16.7
+    Generated     : 12/29/2018 18:27:07
+    Generated from: pulumi version v0.16.9
 #>
 
 function pulumiCompletion {
@@ -152,10 +152,10 @@ function pulumiCompletion {
  		nct --help "help for stack"
  		nct --show-ids "Display each resource's provider-assigned unique ID"
  		nct --show-urns "Display each resource's Pulumi-assigned globally unique URN"
+ 		nct --stack "The name of the stack to operate on. Defaults to the current stack"
  		nct export "Export a stack's deployment to standard out" {
  			nct --file "A filename to write stack output to"
  			nct --help "help for export"
- 			nct --stack "The name of the stack to operate on. Defaults to the current stack"
  		}
  		nct graph "Export a stack's dependency graph to a file" {
  			nct --dependency-edge-color "Sets the color of dependency edges in the graph (default `"#246C60`")"
@@ -163,13 +163,11 @@ function pulumiCompletion {
  			nct --ignore-dependency-edges "Ignores edges introduced by dependency resource relationships"
  			nct --ignore-parent-edges "Ignores edges introduced by parent/child resource relationships"
  			nct --parent-edge-color "Sets the color of parent edges in the graph (default `"#AA6639`")"
- 			nct --stack "The name of the stack to operate on. Defaults to the current stack"
  		}
  		nct import "Import a deployment from standard in into an existing stack" {
  			nct --file "A filename to read stack input from"
  			nct --force "Force the import to occur, even if apparent errors are discovered beforehand (not recommended)"
  			nct --help "help for import"
- 			nct --stack "The name of the stack to operate on. Defaults to the current stack"
  		}
  		nct init "Create an empty stack with the given name, ready for updates" {
  			nct --help "help for init"
@@ -182,18 +180,15 @@ function pulumiCompletion {
  		nct output "Show a stack's output properties" {
  			nct --help "help for output"
  			nct --json "Emit outputs as JSON"
- 			nct --stack "The name of the stack to operate on. Defaults to the current stack"
  		}
  		nct rm "Remove a stack and its configuration" {
  			nct --force "Forces deletion of the stack, leaving behind any resources managed by the stack"
  			nct --help "help for rm"
  			nct --preserve-config "Do not delete the corresponding Pulumi.<stack-name>.yaml configuration file for the stack"
- 			nct --stack "The name of the stack to operate on. Defaults to the current stack"
  			nct --yes "Skip confirmation prompts, and proceed with removal anyway"
  		}
  		nct select "Switch the current workspace to the given stack" {
  			nct --help "help for select"
- 			nct --stack "The name of the stack to select"
  		}
  	}
  	nct state "Edit the current stack's state" {
@@ -201,10 +196,12 @@ function pulumiCompletion {
  		nct delete "Deletes a resource from a stack's state" {
  			nct --force "Force deletion of protected resources"
  			nct --help "help for delete"
+ 			nct --stack "The name of the stack to operate on. Defaults to the current stack"
  		}
  		nct unprotect "Unprotect resources in a stack's state" {
  			nct --all "Unprotect all resources in the checkpoint"
  			nct --help "help for unprotect"
+ 			nct --stack "The name of the stack to operate on. Defaults to the current stack"
  		}
  	}
  	nct up "Create or update the resources in a stack" {

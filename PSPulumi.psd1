@@ -20,8 +20,8 @@
 
     # Description of the functionality provided by this module
     Description       = @'
-    Generated     : 11/15/2018 16:25:29
-    Generated from: pulumi version v0.16.4
+    Generated     : 12/29/2018 18:27:07
+    Generated from: pulumi version v0.16.9
 '@
 
     # Minimum version of the Windows PowerShell engine required by this module
