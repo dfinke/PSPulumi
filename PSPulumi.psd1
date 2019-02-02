@@ -4,7 +4,7 @@
     RootModule        = 'PSPulumi.psm1'
 
     # Version number of this module.
-    ModuleVersion     = '1.0.6'
+    ModuleVersion     = '1.0.7'
 
     # ID used to uniquely identify this module
     GUID              = 'e4d5c1ca-d844-4fd2-8a0c-71ae54b9ddb4'
@@ -20,8 +20,10 @@
 
     # Description of the functionality provided by this module
     Description       = @'
-    Generated     : 12/29/2018 18:27:07
-    Generated from: pulumi version v0.16.9
+PowerShell Autocompletion module for the Pulumi product. Deliver Cloud Native Infrastructure as Code on any cloud with real programming languages and a consistent programming model.
+
+Generated     : 02/02/2019 10:33:24
+Generated from: pulumi version v0.16.14
 '@
 
     # Minimum version of the Windows PowerShell engine required by this module

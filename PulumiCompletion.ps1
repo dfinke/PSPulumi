@@ -1,6 +1,6 @@
 <#
-    Generated     : 12/29/2018 18:27:07
-    Generated from: pulumi version v0.16.9
+    Generated     : 02/02/2019 10:33:24
+    Generated from: pulumi version v0.16.14
 #>
 
 function pulumiCompletion {
@@ -28,10 +28,12 @@ function pulumiCompletion {
  	nct config "Manage configuration" {
  		nct --config-file "Use the configuration values in the specified file rather than detecting the file name"
  		nct --help "help for config"
+ 		nct --json "Emit output as JSON"
  		nct --show-secrets "Show secret values when listing config instead of displaying blinded values"
  		nct --stack "The name of the stack to operate on. Defaults to the current stack"
  		nct get "Get a single configuration value" {
  			nct --help "help for get"
+ 			nct --json "Emit output as JSON"
  		}
  		nct refresh "Update the local configuration based on the most recent deployment of the stack" {
  			nct --force "Overwrite configuration file, if it exists, without creating a backup"
@@ -66,6 +68,12 @@ function pulumiCompletion {
  	nct help "Help about any command" {
  		nct --help "help for help"
  	}
+ 	nct history "Update history for a stack" {
+ 		nct --help "help for history"
+ 		nct --json "Emit output as JSON"
+ 		nct --show-secrets "Show secret values when listing config instead of displaying blinded values"
+ 		nct --stack "Choose a stack other than the currently selected one"
+ 	}
  	nct login "Log into the Pulumi service" {
  		nct --cloud-url "A cloud URL to log into"
  		nct --help "help for login"
@@ -80,12 +88,12 @@ function pulumiCompletion {
  		nct --config-file "Use the configuration values in the specified file rather than detecting the file name"
  		nct --follow "Follow the log stream in real time (like tail -f)"
  		nct --help "help for logs"
- 		nct --json "Emit outputs as JSON"
+ 		nct --json "Emit output as JSON"
  		nct --resource "Only return logs for the requested resource ('name', 'type::name' or full URN).  Defaults to returning all logs."
  		nct --since "Only return logs newer than a relative duration ('5s', '2m', '3h') or absolute timestamp.  Defaults to returning the last 1 hour of logs. (default `"1h`")"
  		nct --stack "The name of the stack to operate on. Defaults to the current stack"
  	}
- 	nct new "Create a new Pulumi project" {
+ 	nct new "Create and deploy a new Pulumi project" {
  		nct --config "Config to save"
  		nct --description "The project description; if not specified, a prompt will request it"
  		nct --dir "The location to place the generated project; if not specified, the current directory is used"
@@ -109,6 +117,7 @@ function pulumiCompletion {
  		}
  		nct ls "List plugins" {
  			nct --help "help for ls"
+ 			nct --json "Emit output as JSON"
  			nct --project "List only the plugins used by the current project"
  		}
  		nct rm "Remove one or more plugins from the download cache" {
@@ -175,11 +184,11 @@ function pulumiCompletion {
  		nct ls "List all known stacks" {
  			nct --all "List all stacks instead of just stacks for the current project"
  			nct --help "help for ls"
- 			nct --json "Emit outputs as JSON"
+ 			nct --json "Emit output as JSON"
  		}
  		nct output "Show a stack's output properties" {
  			nct --help "help for output"
- 			nct --json "Emit outputs as JSON"
+ 			nct --json "Emit output as JSON"
  		}
  		nct rm "Remove a stack and its configuration" {
  			nct --force "Forces deletion of the stack, leaving behind any resources managed by the stack"
@@ -189,6 +198,22 @@ function pulumiCompletion {
  		}
  		nct select "Switch the current workspace to the given stack" {
  			nct --help "help for select"
+ 		}
+ 		nct tag "Manage stack tags" {
+ 			nct --help "help for tag"
+ 			nct get "Get a single stack tag value" {
+ 				nct --help "help for get"
+ 			}
+ 			nct ls "List all stack tags" {
+ 				nct --help "help for ls"
+ 				nct --json "Emit output as JSON"
+ 			}
+ 			nct rm "Remove a stack tag" {
+ 				nct --help "help for rm"
+ 			}
+ 			nct set "Set a stack tag" {
+ 				nct --help "help for set"
+ 			}
  		}
  	}
  	nct state "Edit the current stack's state" {
