@@ -1,6 +1,6 @@
 <#
-    Generated     : 02/02/2019 10:33:24
-    Generated from: pulumi version v0.16.14
+    Generated     : 03/28/2019 19:18:49
+    Generated from: pulumi version v0.17.4
 #>
 
 function pulumiCompletion {
@@ -93,7 +93,7 @@ function pulumiCompletion {
  		nct --since "Only return logs newer than a relative duration ('5s', '2m', '3h') or absolute timestamp.  Defaults to returning the last 1 hour of logs. (default `"1h`")"
  		nct --stack "The name of the stack to operate on. Defaults to the current stack"
  	}
- 	nct new "Create and deploy a new Pulumi project" {
+ 	nct new "Create a new Pulumi project" {
  		nct --config "Config to save"
  		nct --description "The project description; if not specified, a prompt will request it"
  		nct --dir "The location to place the generated project; if not specified, the current directory is used"
@@ -103,7 +103,6 @@ function pulumiCompletion {
  		nct --name "The project name; if not specified, a prompt will request it"
  		nct --offline "Use locally cached templates without making any network requests"
  		nct --stack "The stack name; either an existing stack or stack to create; if not specified, a prompt will request it"
- 		nct --suppress-outputs "Suppress display of stack outputs (in case they contain sensitive values)"
  		nct --yes "Skip prompts and proceed with default values"
  	}
  	nct plugin "Manage language and resource provider plugins" {
@@ -190,6 +189,9 @@ function pulumiCompletion {
  			nct --help "help for output"
  			nct --json "Emit output as JSON"
  		}
+ 		nct rename "Rename an existing stack" {
+ 			nct --help "help for rename"
+ 		}
  		nct rm "Remove a stack and its configuration" {
  			nct --force "Forces deletion of the stack, leaving behind any resources managed by the stack"
  			nct --help "help for rm"
@@ -251,7 +253,7 @@ function pulumiCompletion {
  	nct version "Print Pulumi's version number" {
  		nct --help "help for version"
  	}
- 	nct whoami "Display current logged in user" {
+ 	nct whoami "Display the current logged-in user" {
  		nct --help "help for whoami"
  	}
 
