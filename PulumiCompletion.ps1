@@ -1,6 +1,6 @@
 <#
-    Generated     : 03/28/2019 19:18:49
-    Generated from: pulumi version v0.17.4
+    Generated     : 09/08/2019 14:13:48
+    Generated from: pulumi version v1.0.0
 #>
 
 function pulumiCompletion {
@@ -49,7 +49,6 @@ function pulumiCompletion {
  		}
  	}
  	nct destroy "Destroy an existing stack and its resources" {
- 		nct --analyzer "Run one or more analyzers as part of this update"
  		nct --config-file "Use the configuration values in the specified file rather than detecting the file name"
  		nct --debug "Print detailed debugging output during resource operations"
  		nct --diff "Display operation as a rich diff showing the overall change"
@@ -68,7 +67,7 @@ function pulumiCompletion {
  	nct help "Help about any command" {
  		nct --help "help for help"
  	}
- 	nct history "Update history for a stack" {
+ 	nct history "[PREVIEW] Update history for a stack" {
  		nct --help "help for history"
  		nct --json "Emit output as JSON"
  		nct --show-secrets "Show secret values when listing config instead of displaying blinded values"
@@ -84,7 +83,7 @@ function pulumiCompletion {
  		nct --help "help for logout"
  		nct --local "Log out of using local mode"
  	}
- 	nct logs "Show aggregated logs for a stack" {
+ 	nct logs "[PREVIEW] Show aggregated logs for a stack" {
  		nct --config-file "Use the configuration values in the specified file rather than detecting the file name"
  		nct --follow "Follow the log stream in real time (like tail -f)"
  		nct --help "help for logs"
@@ -102,17 +101,18 @@ function pulumiCompletion {
  		nct --help "help for new"
  		nct --name "The project name; if not specified, a prompt will request it"
  		nct --offline "Use locally cached templates without making any network requests"
+ 		nct --secrets-provider "The type of the provider that should be used to encrypt and decrypt secrets (possible choices: default, passphrase, awskms, azurekeyvault, gcpkms, hashivault) (default `"default`")"
  		nct --stack "The stack name; either an existing stack or stack to create; if not specified, a prompt will request it"
  		nct --yes "Skip prompts and proceed with default values"
  	}
  	nct plugin "Manage language and resource provider plugins" {
  		nct --help "help for plugin"
  		nct install "Install one or more plugins" {
- 			nct --cloud-url "A cloud URL to download releases from"
  			nct --exact "Force installation of an exact version match (usually >= is accepted)"
  			nct --file "Install a plugin from a tarball file, instead of downloading it"
  			nct --help "help for install"
  			nct --reinstall "Reinstall a plugin even if it already exists"
+ 			nct --server "A URL to download plugins from"
  		}
  		nct ls "List plugins" {
  			nct --help "help for ls"
@@ -126,12 +126,12 @@ function pulumiCompletion {
  		}
  	}
  	nct preview "Show a preview of updates to a stack's resources" {
- 		nct --analyzer "Run one or more analyzers as part of this update"
  		nct --config-file "Use the configuration values in the specified file rather than detecting the file name"
  		nct --debug "Print detailed debugging output during resource operations"
  		nct --diff "Display operation as a rich diff showing the overall change"
  		nct --expect-no-changes "Return an error if any changes are proposed by this preview"
  		nct --help "help for preview"
+ 		nct --json "Serialize the preview diffs, operations, and overall output as JSON"
  		nct --message "Optional message to associate with the preview operation"
  		nct --parallel "Allow P resource operations to run in parallel at once (1 for no parallelism). Defaults to unbounded. (default 2147483647)"
  		nct --show-config "Show configuration keys and variables"
@@ -141,7 +141,6 @@ function pulumiCompletion {
  		nct --suppress-outputs "Suppress display of stack outputs (in case they contain sensitive values)"
  	}
  	nct refresh "Refresh the resources in a stack" {
- 		nct --analyzer "Run one or more analyzers as part of this update"
  		nct --config-file "Use the configuration values in the specified file rather than detecting the file name"
  		nct --debug "Print detailed debugging output during resource operations"
  		nct --diff "Display operation as a rich diff showing the overall change"
@@ -159,6 +158,7 @@ function pulumiCompletion {
  	nct stack "Manage stacks" {
  		nct --help "help for stack"
  		nct --show-ids "Display each resource's provider-assigned unique ID"
+ 		nct --show-secrets "Display stack outputs which are marked as secret in plaintext"
  		nct --show-urns "Display each resource's Pulumi-assigned globally unique URN"
  		nct --stack "The name of the stack to operate on. Defaults to the current stack"
  		nct export "Export a stack's deployment to standard out" {
@@ -179,11 +179,15 @@ function pulumiCompletion {
  		}
  		nct init "Create an empty stack with the given name, ready for updates" {
  			nct --help "help for init"
+ 			nct --secrets-provider "The type of the provider that should be used to encrypt and decrypt secrets (possible choices: default, passphrase, awskms, azurekeyvault, gcpkms, hashivault) (default `"default`")"
  		}
- 		nct ls "List all known stacks" {
+ 		nct ls "List stacks" {
  			nct --all "List all stacks instead of just stacks for the current project"
  			nct --help "help for ls"
  			nct --json "Emit output as JSON"
+ 			nct --organization "Filter returned stacks to those in a specific organization"
+ 			nct --project "Filter returned stacks to those with a specific project name"
+ 			nct --tag "Filter returned stacks to those in a specific tag (tag-name or tag-name=tag-value)"
  		}
  		nct output "Show a stack's output properties" {
  			nct --help "help for output"
@@ -224,15 +228,16 @@ function pulumiCompletion {
  			nct --force "Force deletion of protected resources"
  			nct --help "help for delete"
  			nct --stack "The name of the stack to operate on. Defaults to the current stack"
+ 			nct --yes "Skip confirmation prompts"
  		}
  		nct unprotect "Unprotect resources in a stack's state" {
  			nct --all "Unprotect all resources in the checkpoint"
  			nct --help "help for unprotect"
  			nct --stack "The name of the stack to operate on. Defaults to the current stack"
+ 			nct --yes "Skip confirmation prompts"
  		}
  	}
  	nct up "Create or update the resources in a stack" {
- 		nct --analyzer "Run one or more analyzers as part of this update"
  		nct --config "Config to use during the update"
  		nct --config-file "Use the configuration values in the specified file rather than detecting the file name"
  		nct --debug "Print detailed debugging output during resource operations"
@@ -242,6 +247,7 @@ function pulumiCompletion {
  		nct --message "Optional message to associate with the update operation"
  		nct --parallel "Allow P resource operations to run in parallel at once (1 for no parallelism). Defaults to unbounded. (default 2147483647)"
  		nct --refresh "Refresh the state of the stack's resources before this update"
+ 		nct --secrets-provider "The type of the provider that should be used to encrypt and decrypt secrets (possible choices: default, passphrase, awskms, azurekeyvault, gcpkms, hashivault). Onlyused when creating a new stack from an existing template (default `"default`")"
  		nct --show-config "Show configuration keys and variables"
  		nct --show-replacement-steps "Show detailed resource replacement creates and deletes instead of a single step"
  		nct --show-sames "Show resources that don't need be updated because they haven't changed, alongside those that do"
