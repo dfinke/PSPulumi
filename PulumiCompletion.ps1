@@ -1,6 +1,6 @@
 <#
-    Generated     : 09/08/2019 14:13:48
-    Generated from: pulumi version v1.0.0
+    Generated     : 09/29/2019 21:37:12
+    Generated from: pulumi version v1.2.0
 #>
 
 function pulumiCompletion {
@@ -18,7 +18,7 @@ function pulumiCompletion {
  		nct --logtostderr "Log to stderr instead of to files"
  		nct --non-interactive "Disable interactive mode for all commands"
  		nct --profiling "Emit CPU and memory profiles and an execution trace to '[filename].[pid].{cpu,mem,trace}', respectively"
- 		nct --tracing "Emit tracing to a Zipkin-compatible tracing endpoint"
+ 		nct --tracing "Emit tracing to the specified endpoint. Use the file: scheme to write tracing data to a local file"
  		nct --verbose "Enable verbose logging (e.g., v=3); anything >3 is very verbose"
  	nct cancel "Cancel a stack's currently running update, if any" {
  		nct --help "help for cancel"
@@ -62,6 +62,7 @@ function pulumiCompletion {
  		nct --skip-preview "Do not perform a preview before performing the destroy"
  		nct --stack "The name of the stack to operate on. Defaults to the current stack"
  		nct --suppress-outputs "Suppress display of stack outputs (in case they contain sensitive values)"
+ 		nct --target "Specify a single resource URN to destroy. All resources necessary to destroy this target will also be destroyed. Multiple resources can be specified using: --target urn1 --target urn2"
  		nct --yes "Automatically approve and perform the destroy after previewing it"
  	}
  	nct help "Help about any command" {
@@ -126,6 +127,7 @@ function pulumiCompletion {
  		}
  	}
  	nct preview "Show a preview of updates to a stack's resources" {
+ 		nct --config "Config to use during the preview"
  		nct --config-file "Use the configuration values in the specified file rather than detecting the file name"
  		nct --debug "Print detailed debugging output during resource operations"
  		nct --diff "Display operation as a rich diff showing the overall change"
@@ -135,6 +137,7 @@ function pulumiCompletion {
  		nct --message "Optional message to associate with the preview operation"
  		nct --parallel "Allow P resource operations to run in parallel at once (1 for no parallelism). Defaults to unbounded. (default 2147483647)"
  		nct --show-config "Show configuration keys and variables"
+ 		nct --show-reads "Show resources that are being read in, alongside those being managed directly in the stack"
  		nct --show-replacement-steps "Show detailed resource replacement creates and deletes instead of a single step"
  		nct --show-sames "Show resources that needn't be updated because they haven't changed, alongside those that do"
  		nct --stack "The name of the stack to operate on. Defaults to the current stack"
@@ -153,6 +156,7 @@ function pulumiCompletion {
  		nct --skip-preview "Do not perform a preview before performing the refresh"
  		nct --stack "The name of the stack to operate on. Defaults to the current stack"
  		nct --suppress-outputs "Suppress display of stack outputs (in case they contain sensitive values)"
+ 		nct --target "Specify a single resource URN to refresh. Multiple resource can be specified using: --target urn1 --target urn2"
  		nct --yes "Automatically approve and perform the refresh after previewing it"
  	}
  	nct stack "Manage stacks" {
@@ -249,6 +253,7 @@ function pulumiCompletion {
  		nct --refresh "Refresh the state of the stack's resources before this update"
  		nct --secrets-provider "The type of the provider that should be used to encrypt and decrypt secrets (possible choices: default, passphrase, awskms, azurekeyvault, gcpkms, hashivault). Onlyused when creating a new stack from an existing template (default `"default`")"
  		nct --show-config "Show configuration keys and variables"
+ 		nct --show-reads "Show resources that are being read in, alongside those being managed directly in the stack"
  		nct --show-replacement-steps "Show detailed resource replacement creates and deletes instead of a single step"
  		nct --show-sames "Show resources that don't need be updated because they haven't changed, alongside those that do"
  		nct --skip-preview "Do not perform a preview before performing the update"
