@@ -4,22 +4,22 @@
 #>
 
 function pulumiCompletion {
-    param($wordToComplete, $commandAst)
+	param($wordToComplete, $commandAst)
 
-    Set-Alias -Name nct -Value New-CommandTree
+	Set-Alias -Name nct -Value New-CommandTree
 
-    $commandTree = & {
-    		nct --color "Colorize output. Choices are: always, never, raw, auto (default `"auto`")"
- 		nct --cwd "Run pulumi as if it had been started in another directory"
- 		nct --disable-integrity-checking "Disable integrity checking of checkpoint files"
- 		nct --emoji "Enable emojis in the output"
- 		nct --help "help for pulumi"
- 		nct --logflow "Flow log settings to child processes (like plugins)"
- 		nct --logtostderr "Log to stderr instead of to files"
- 		nct --non-interactive "Disable interactive mode for all commands"
- 		nct --profiling "Emit CPU and memory profiles and an execution trace to '[filename].[pid].{cpu,mem,trace}', respectively"
- 		nct --tracing "Emit tracing to the specified endpoint. Use the file: scheme to write tracing data to a local file"
- 		nct --verbose "Enable verbose logging (e.g., v=3); anything >3 is very verbose"
+	$commandTree = & {
+		nct --color "Colorize output. Choices are: always, never, raw, auto (default `"auto`")"
+		nct --cwd "Run pulumi as if it had been started in another directory"
+		nct --disable-integrity-checking "Disable integrity checking of checkpoint files"
+		nct --emoji "Enable emojis in the output"
+		nct --help "help for pulumi"
+		nct --logflow "Flow log settings to child processes (like plugins)"
+		nct --logtostderr "Log to stderr instead of to files"
+		nct --non-interactive "Disable interactive mode for all commands"
+		nct --profiling "Emit CPU and memory profiles and an execution trace to '[filename].[pid].{cpu,mem,trace}', respectively"
+		nct --tracing "Emit tracing to the specified endpoint. Use the file: scheme to write tracing data to a local file"
+		nct --verbose "Enable verbose logging (e.g., v=3); anything >3 is very verbose"
  	nct cancel "Cancel a stack's currently running update, if any" {
  		nct --help "help for cancel"
  		nct --stack "The name of the stack to operate on. Defaults to the current stack"
@@ -268,9 +268,9 @@ function pulumiCompletion {
  		nct --help "help for whoami"
  	}
 
-    }
+	}
 
-    Get-CommandTreeCompletion $wordToComplete $commandAst $commandTree
+	Get-CommandTreeCompletion $wordToComplete $commandAst $commandTree
 }
 
 Register-ArgumentCompleter -CommandName pulumi -Native -ScriptBlock $function:pulumiCompletion
