@@ -1,25 +1,25 @@
 <#
-    Generated     : 09/29/2019 21:37:12
-    Generated from: pulumi version v1.2.0
+    Generated     : 11/16/2019 18:06:36
+    Generated from: pulumi version v1.5.2
 #>
 
 function pulumiCompletion {
-	param($wordToComplete, $commandAst)
+    param($wordToComplete, $commandAst)
 
-	Set-Alias -Name nct -Value New-CommandTree
+    Set-Alias -Name nct -Value New-CommandTree
 
-	$commandTree = & {
-		nct --color "Colorize output. Choices are: always, never, raw, auto (default `"auto`")"
-		nct --cwd "Run pulumi as if it had been started in another directory"
-		nct --disable-integrity-checking "Disable integrity checking of checkpoint files"
-		nct --emoji "Enable emojis in the output"
-		nct --help "help for pulumi"
-		nct --logflow "Flow log settings to child processes (like plugins)"
-		nct --logtostderr "Log to stderr instead of to files"
-		nct --non-interactive "Disable interactive mode for all commands"
-		nct --profiling "Emit CPU and memory profiles and an execution trace to '[filename].[pid].{cpu,mem,trace}', respectively"
-		nct --tracing "Emit tracing to the specified endpoint. Use the file: scheme to write tracing data to a local file"
-		nct --verbose "Enable verbose logging (e.g., v=3); anything >3 is very verbose"
+    $commandTree = & {
+    		nct --color "Colorize output. Choices are: always, never, raw, auto (default `"auto`")"
+ 		nct --cwd "Run pulumi as if it had been started in another directory"
+ 		nct --disable-integrity-checking "Disable integrity checking of checkpoint files"
+ 		nct --emoji "Enable emojis in the output"
+ 		nct --help "help for pulumi"
+ 		nct --logflow "Flow log settings to child processes (like plugins)"
+ 		nct --logtostderr "Log to stderr instead of to files"
+ 		nct --non-interactive "Disable interactive mode for all commands"
+ 		nct --profiling "Emit CPU and memory profiles and an execution trace to '[filename].[pid].{cpu,mem,trace}', respectively"
+ 		nct --tracing "Emit tracing to the specified endpoint. Use the file: scheme to write tracing data to a local file"
+ 		nct --verbose "Enable verbose logging (e.g., v=3); anything >3 is very verbose"
  	nct cancel "Cancel a stack's currently running update, if any" {
  		nct --help "help for cancel"
  		nct --stack "The name of the stack to operate on. Defaults to the current stack"
@@ -34,6 +34,7 @@ function pulumiCompletion {
  		nct get "Get a single configuration value" {
  			nct --help "help for get"
  			nct --json "Emit output as JSON"
+ 			nct --path "The key contains a path to a property in a map or list to get"
  		}
  		nct refresh "Update the local configuration based on the most recent deployment of the stack" {
  			nct --force "Overwrite configuration file, if it exists, without creating a backup"
@@ -41,9 +42,11 @@ function pulumiCompletion {
  		}
  		nct rm "Remove configuration value" {
  			nct --help "help for rm"
+ 			nct --path "The key contains a path to a property in a map or list to remove"
  		}
  		nct set "Set configuration value" {
  			nct --help "help for set"
+ 			nct --path "The key contains a path to a property in a map or list to set"
  			nct --plaintext "Save the value as plaintext (unencrypted)"
  			nct --secret "Encrypt the value instead of storing it in plaintext"
  		}
@@ -95,6 +98,7 @@ function pulumiCompletion {
  	}
  	nct new "Create a new Pulumi project" {
  		nct --config "Config to save"
+ 		nct --config-path "Config keys contain a path to a property in a map or list to set"
  		nct --description "The project description; if not specified, a prompt will request it"
  		nct --dir "The location to place the generated project; if not specified, the current directory is used"
  		nct --force "Forces content to be generated even if it would change existing files"
@@ -129,6 +133,7 @@ function pulumiCompletion {
  	nct preview "Show a preview of updates to a stack's resources" {
  		nct --config "Config to use during the preview"
  		nct --config-file "Use the configuration values in the specified file rather than detecting the file name"
+ 		nct --config-path "Config keys contain a path to a property in a map or list to set"
  		nct --debug "Print detailed debugging output during resource operations"
  		nct --diff "Display operation as a rich diff showing the overall change"
  		nct --expect-no-changes "Return an error if any changes are proposed by this preview"
@@ -244,6 +249,7 @@ function pulumiCompletion {
  	nct up "Create or update the resources in a stack" {
  		nct --config "Config to use during the update"
  		nct --config-file "Use the configuration values in the specified file rather than detecting the file name"
+ 		nct --config-path "Config keys contain a path to a property in a map or list to set"
  		nct --debug "Print detailed debugging output during resource operations"
  		nct --diff "Display operation as a rich diff showing the overall change"
  		nct --expect-no-changes "Return an error if any changes occur during this update"
@@ -251,6 +257,7 @@ function pulumiCompletion {
  		nct --message "Optional message to associate with the update operation"
  		nct --parallel "Allow P resource operations to run in parallel at once (1 for no parallelism). Defaults to unbounded. (default 2147483647)"
  		nct --refresh "Refresh the state of the stack's resources before this update"
+ 		nct --replace "Specify resources to replace. Multiple resources can be specified using --replace run1 --replace urn2"
  		nct --secrets-provider "The type of the provider that should be used to encrypt and decrypt secrets (possible choices: default, passphrase, awskms, azurekeyvault, gcpkms, hashivault). Onlyused when creating a new stack from an existing template (default `"default`")"
  		nct --show-config "Show configuration keys and variables"
  		nct --show-reads "Show resources that are being read in, alongside those being managed directly in the stack"
@@ -259,6 +266,8 @@ function pulumiCompletion {
  		nct --skip-preview "Do not perform a preview before performing the update"
  		nct --stack "The name of the stack to operate on. Defaults to the current stack"
  		nct --suppress-outputs "Suppress display of stack outputs (in case they contain sensitive values)"
+ 		nct --target "Specify a single resource URN to update. Other resources will not be updated. Multiple resources can be specified using --target urn1 --target urn2"
+ 		nct --target-replace "Specify a single resource URN to replace. Other resources will not be updated. Shorthand for --target urn --replace urn."
  		nct --yes "Automatically approve and perform the update after previewing it"
  	}
  	nct version "Print Pulumi's version number" {
@@ -268,9 +277,9 @@ function pulumiCompletion {
  		nct --help "help for whoami"
  	}
 
-	}
+    }
 
-	Get-CommandTreeCompletion $wordToComplete $commandAst $commandTree
+    Get-CommandTreeCompletion $wordToComplete $commandAst $commandTree
 }
 
 Register-ArgumentCompleter -CommandName pulumi -Native -ScriptBlock $function:pulumiCompletion
